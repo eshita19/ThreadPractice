@@ -19,8 +19,9 @@
   - Hence Semaphore count determines the number of thread that can access a resource at any one time.
 - ### CountDownlatch:
    - Count down latch is initialized with a number. It indicates the number of events which will occur before the latch is released.
-   - ```latch.await() //wait for counter to become zero
-     ``` latch.countDown() // Decrement the count of countdownlatch```   
+      ```
+      latch.await() //wait for counter to become zero
+      latch.countDown() // Decrement the count of countdownlatch```   
   
   
 
