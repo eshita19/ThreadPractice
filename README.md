@@ -17,17 +17,32 @@
   - If counter > 0, then thread acquires permit, causes semaphore count to be decremented.
   - Thread can release the access to shared resource by releasing semaphore, cauing the semaphore count to be incremented.
   - Hence Semaphore count determines the number of thread that can access a resource at any one time.
+  - ```
+      Semaphore semaphore = new Semaphore(1);//Initial coount of 1 means semaphore is available for 1 acquisition
+      semaphore.acquire() 
+      semaphore.release()
+     ```
 - ### CountDownlatch:
    - Count down latch is initialized with a number. It indicates the number of events which will occur before the latch is released.
-      ```
+     ```
+      CountDownLatch latch = new CountDownlatch(3)
       latch.await() //wait for counter to become zero
-      latch.countDown() // Decrement the count of countdownlatch
+      latch.countDown() // Decrement the count of countdownlatch. Call it three times to resume execution of thread which called await
       ```
 - ### CyclicBarrier: 
    - A synchronization aid that allows a set of threads to all wait for each other to reach a common barrier point. CyclicBarriers are useful in programs involving a fixed sized party of threads that must occasionally wait for each other. The barrier is called <em>cyclic</em> because it can be re-used after the waiting threads are released.
+   - ```
+     CyclicBarrier barrier = new CyclicBarrier(3);
+     barrier.await() // Needs to be called thrice for executing the code further.
+     ```
    
 - ### Phaser:
   - Phaser allows synchronization of threads which have multiple phases. All the threads will be paused untill a phase of all threads is completed.
+  
+##  Executors
+    - Example:
+    - Fixedcachepool - the number of threads in the pool is fixed hence, the threads are re-used once free.
+    - SchedulePool - We can schedule the time delay to execute a thread.
       
   
   
