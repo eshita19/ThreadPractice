@@ -49,6 +49,10 @@
    -  A class which implements Callable can return a value. The callable object needs to be submitted to executor.
    - The submit operation returns a Future object. Future object get() method call will cause current thread to wait untill th e callable return value is retrieved,
    
+##  Atomic Operations
+   - Example: https://github.com/eshita19/ThreadPractice/blob/master/src/com/atomic/AtomicOperationsTest.java
+   - If the shared resource is a single variable we can use the Atomic version of it. Its method are synchronized.
+   - ``get(), getAndSet(val), compareAndSet(expectedval, updateval```
    
   
   
