@@ -27,6 +27,7 @@ class ThreadForSchdPool extends Thread {
 public class ScheduledThreadPoolExecutor {
 	public static void main(String[] args) {
 		ScheduledExecutorService execService = Executors.newScheduledThreadPool(2);
-		execService.schedule(new ThreadForSchdPool("A"), 1000l, TimeUnit.MINUTES);
+		execService.schedule(new ThreadForSchdPool("A"), 5, TimeUnit.SECONDS);
+		execService.shutdown();
 	}
 }
