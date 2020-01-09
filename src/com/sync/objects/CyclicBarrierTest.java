@@ -32,16 +32,22 @@ class MyBarrierThread extends Thread {
 		} catch (BrokenBarrierException e) {
 			e.printStackTrace();
 		}
-		System.out.println("Completed " + this.name); // this will be reached only when all threads have reached barrier
+		System.out.println("Completed " + this.name); // this will be reached
+														// only when all threads
+														// have reached barrier
 	}
 }
 
 public class CyclicBarrierTest {
 	public static void main(String[] args) {
 		System.out.println("Starting barrier..");
-		CyclicBarrier barrier = new CyclicBarrier(3);
+		CyclicBarrier barrier = new CyclicBarrier(3, () -> System.out.println("Barrier reached"));
 		new MyBarrierThread("A", barrier).start();
 		new MyBarrierThread("B", barrier).start();
 		new MyBarrierThread("C", barrier).start();
+		new MyBarrierThread("D", barrier).start();
+		new MyBarrierThread("E", barrier).start();
+		new MyBarrierThread("F", barrier).start();
+
 	}
 }
