@@ -40,9 +40,9 @@
   - Phaser allows synchronization of threads which have multiple phases. All the threads will be paused untill a phase of all threads is completed.
   
 ##  Executors
-    - Example:
-    - Fixedcachepool - the number of threads in the pool is fixed hence, the threads are re-used once free.
-    - SchedulePool - We can schedule the time delay to execute a thread.
+   - Example: https://github.com/eshita19/ThreadPractice/tree/master/src/com/executor
+   - Fixedcachepool - the number of threads in the pool is fixed hence, the threads are re-used once free.
+   - SchedulePool - We can schedule the time delay to execute a thread.
       
   
   
