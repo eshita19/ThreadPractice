@@ -2,6 +2,13 @@ package com.sync.objects;
 
 import java.util.concurrent.CountDownLatch;
 
+/**
+ * Countdownlatch accepts a count.
+ * If a  thread calls latch.await, it will be in waiting state, 
+ * until the latch's count is decremented to 0, may be by other thread.
+ * @author emathur
+ *
+ */
 class MyThread  extends Thread{
 	private CountDownLatch latch;
 	

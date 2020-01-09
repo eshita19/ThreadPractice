@@ -2,18 +2,29 @@ package com.sync.objects;
 
 import java.util.concurrent.Semaphore;
 
-class Shared{
+/**
+ * Semaphore accepts a count. When semaphore's acquire method is called by a
+ * thread, it will acquire the monitor on all shared resources if the current
+ * semaphore count is >0. After acquiring the monitor, the semaphore count is
+ * decrement by 1. Thread can release the access to shared resource by releasing
+ * semaphore, cauing the semaphore count to be incremented.
+ * 
+ * @author emathur
+ */
+class Shared {
 	static int count = 0;
 }
 
-class IncrementShared extends Thread{
+class IncrementShared extends Thread {
 	Semaphore sem;
+
 	public IncrementShared(Semaphore sem) {
 		this.sem = sem;
 	}
+
 	@Override
 	public void run() {
-		for(int i=0; i <5; i++){
+		for (int i = 0; i < 5; i++) {
 			try {
 				sem.acquire();
 			} catch (InterruptedException e1) {
@@ -37,14 +48,16 @@ class IncrementShared extends Thread{
 	}
 }
 
-class DecrementShared extends Thread{
+class DecrementShared extends Thread {
 	Semaphore sem;
+
 	public DecrementShared(Semaphore sem) {
 		this.sem = sem;
 	}
+
 	@Override
 	public void run() {
-		for(int i=0; i <5; i++){
+		for (int i = 0; i < 5; i++) {
 			try {
 				sem.acquire();
 			} catch (InterruptedException e1) {
@@ -62,6 +75,7 @@ class DecrementShared extends Thread{
 		}
 	}
 }
+
 public class SemaphoreTest {
 
 	public static void main(String[] args) throws InterruptedException {
@@ -69,8 +83,6 @@ public class SemaphoreTest {
 		IncrementShared incShared = new IncrementShared(semaphore);
 		DecrementShared decShared = new DecrementShared(semaphore);
 		decShared.start();
-		decShared.join();
 		incShared.start();
-		incShared.join();
 	}
 }
