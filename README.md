@@ -52,7 +52,7 @@
 ##  Atomic Operations
    - Example: https://github.com/eshita19/ThreadPractice/blob/master/src/com/atomic/AtomicOperationsTest.java
    - If the shared resource is a single variable we can use the Atomic version of it. Its method are synchronized.
-   - ``get(), getAndSet(val), compareAndSet(expectedval, updateval```
+   - ```get(), getAndSet(val), compareAndSet(expectedval, updateval```
    
   
   
