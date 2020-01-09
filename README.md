@@ -48,6 +48,11 @@
    - Example : https://github.com/eshita19/ThreadPractice/tree/master/src/com/callable
    -  A class which implements Callable can return a value. The callable object needs to be submitted to executor.
    - The submit operation returns a Future object. Future object get() method call will cause current thread to wait untill th e callable return value is retrieved,
+
+## Locks
+  - Example : https://github.com/eshita19/ThreadPractice/tree/master/src/com/locks
+  - Lock provides alternative to synchronized methods/blocks. The lock and unlock calls may not be in same method.
+  - RentrantLock and ReadWriteLock(multiple reads allowed but single write)
    
 ##  Atomic Operations
    - Example: https://github.com/eshita19/ThreadPractice/blob/master/src/com/atomic/AtomicOperationsTest.java
