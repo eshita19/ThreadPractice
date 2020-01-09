@@ -11,12 +11,21 @@
    - ```Object's wait method``` : Causes the thread to wait unless it is being notified using notify or notifyall. The thread releases all the object monitors it owns. And when it is notified it needs to compete in same way for resources as a new thread.
  
 ## Synchronization objects 
+- https://github.com/eshita19/ThreadPractice/tree/master/src/com/sync/objects
 - ### Semaphore:
   - Controls access to shared resource using a counter. 
   - If counter > 0, then thread acquires permit, causes semaphore count to be decremented.
   - Thread can release the access to shared resource by releasing semaphore, cauing the semaphore count to be incremented.
   - Hence Semaphore count determines the number of thread that can access a resource at any one time.
-  - Example:
+- ### CountDownlatch:
+   - Count down latch is initialized with a number. It indicates the number of events which will occur before the latch is released.
+      ```
+      latch.await() //wait for counter to become zero
+      latch.countDown() // Decrement the count of countdownlatch
+      ```
+- ### CyclicBarrier: 
+   - A synchronization aid that allows a set of threads to all wait for each other to reach a common barrier point. CyclicBarriers are useful in programs involving a fixed sized party of threads that must occasionally wait for each other. The barrier is called <em>cyclic</em> because it can be re-used after the waiting threads are released.
+      
   
   
 
