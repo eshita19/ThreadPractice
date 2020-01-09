@@ -40,10 +40,16 @@
   - Phaser allows synchronization of threads which have multiple phases. All the threads will be paused untill a phase of all threads is completed.
   
 ##  Executors
-    - Example:
-    - Fixedcachepool - the number of threads in the pool is fixed hence, the threads are re-used once free.
-    - SchedulePool - We can schedule the time delay to execute a thread.
-      
+   - Example: https://github.com/eshita19/ThreadPractice/tree/master/src/com/executor
+   - Fixedcachepool - the number of threads in the pool is fixed hence, the threads are re-used once free.
+   - SchedulePool - We can schedule the time delay to execute a thread.
+   
+##  Callable and Future
+   - Example : 
+   -  A class which implements Callable can return a value. The callable object needs to be submitted to executor.
+   - The submit operation returns a Future object. Future object get() method call will cause current thread to wait untill th e callable return value is retrieved,
+   
+   
   
   
 
