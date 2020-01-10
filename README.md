@@ -58,6 +58,7 @@
    - Example: https://github.com/eshita19/ThreadPractice/blob/master/src/com/atomic/AtomicOperationsTest.java
    - If the shared resource is a single variable we can use the Atomic version of it. Its method are synchronized.
    - ```get(), getAndSet(val), compareAndSet(expectedval, updateval```
+   - Difference between Voltaile and Atomic Integer: https://www.youtube.com/watch?v=WH5UvQJizH0
    
   
   
